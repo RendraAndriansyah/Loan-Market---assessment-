@@ -1,9 +1,9 @@
+import Layout from "./components/layouts/Layout";
+
 function App() {
 	return (
-		<div className="flex">
-			<aside className="bg-blue-900 w-64 h-screen sticky top-0 text-white">Sidebar</aside>
-
-			<main className="w-full p-2">
+		<Layout>
+			<main className="w-full">
 				<h1>
 					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt culpa
 					possimus nam non sunt, delectus explicabo asperiores iure repellendus commodi.
@@ -87,7 +87,7 @@ function App() {
 					doloribus quae neque vitae.
 				</p>
 			</main>
-		</div>
+		</Layout>
 	);
 }
 
