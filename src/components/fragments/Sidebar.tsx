@@ -1,18 +1,30 @@
 import { GoChevronDown, GoHome, GoPencil } from "react-icons/go";
 import { AiOutlineUser } from "react-icons/ai";
 import Button from "../elements/Button";
+import { useState } from "react";
 const Sidebar = ({ Collapse }: { Collapse: boolean }) => {
+	const [show, setShow] = useState<boolean>(true);
+
 	return (
-		<aside className={`${Collapse ? "w-16" : "w-72"}  bg-cyan-950 transition-all  h-screen sticky top-0 text-white`}>
+		<aside
+			className={`${Collapse ? "w-16" : "w-72"}  bg-cyan-950 transition-all  h-screen sticky top-0 text-white z-10`}
+		>
 			<BrandAvatar Collapse={Collapse} username="Yoseph Duna" statusUser="author" />
 			<menu className="pt-5">
 				<ul>
 					<ListMenu Collapse={Collapse} icon={<GoHome size={22} />} title="Dashboard" />
 					<ListMenu Collapse={Collapse} icon={<AiOutlineUser size={22} />} title="User Management" />
-					<ListMenu Collapse={Collapse} icon={<GoPencil size={22} />} title="News">
-						<Button>
-							<GoChevronDown size={22} />
-						</Button>
+					<ListMenu Collapse={Collapse} icon={<GoPencil size={22} />} title="News" onHover={() => setShow(!show)}>
+						{!Collapse && (
+							<Button>
+								<GoChevronDown size={22} />
+							</Button>
+						)}
+						{Collapse && (
+							<div className="absolute left-16 text-left bg-sky-950 w-28 px-2 py-1.5" hidden={show}>
+								Add News
+							</div>
+						)}
 					</ListMenu>
 				</ul>
 			</menu>
@@ -33,12 +45,16 @@ type BrandAvatarProps = {
 
 const BrandAvatar = ({ username, statusUser, Collapse }: BrandAvatarProps) => {
 	return (
-		<div id="top" className="px-6 py-8">
-			<div id="logo" className="flex  w-20 h-20 bg-blue-400 justify-center items-end p-2">
-				<h1 className="font-semibold text-base">Loan Market</h1>
+		<div id="top" className={`${Collapse ? "px-2 " : "px-6"} h-44 py-6`}>
+			<div
+				id="logo"
+				className={`${Collapse ? "w-12 h-12" : "w-20 h-20"} flex bg-blue-400 justify-center items-end p-1`}
+			>
+				<h1 className={`${Collapse ? "font-semibold text-xs" : "font-bold text-base"}`}>Loan Market</h1>
 			</div>
 			<div hidden={Collapse}>
 				<p className="font-medium pt-2">{username}</p>
+
 				<p className="text-slate-400 font-medium">{statusUser}</p>
 			</div>
 		</div>
@@ -48,18 +64,23 @@ const BrandAvatar = ({ username, statusUser, Collapse }: BrandAvatarProps) => {
 type ListMenuProps = {
 	title: string;
 	icon: JSX.Element;
-	children?: JSX.Element;
+	children?: any;
 	Collapse: boolean;
+	onHover?: () => void;
 };
 
-const ListMenu = ({ title, icon, children, Collapse }: ListMenuProps) => {
+const ListMenu = ({ title, icon, children, Collapse, onHover }: ListMenuProps) => {
 	return (
-		<li className="flex items-center h-10 bg-sky-950 border-l-emerald-50 border-l-2 px-5 py-2 ">
+		<li
+			className="flex items-center h-10 bg-sky-950 border-l-emerald-50 border-l-2 px-5 py-2 cursor-pointer  transition-all "
+			onMouseEnter={onHover}
+			onMouseLeave={onHover}
+		>
 			<i className="pr-3">{icon}</i>
-			<nav className={`w-full flex justify-between ${Collapse && "hidden"}`}>
+			<div className={`w-full flex justify-between ${Collapse && "hidden"}`}>
 				<p>{title}</p>
-				<p>{children}</p>
-			</nav>
+			</div>
+			{children}
 		</li>
 	);
 };

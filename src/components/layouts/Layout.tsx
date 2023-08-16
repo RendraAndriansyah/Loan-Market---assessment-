@@ -8,7 +8,7 @@ const Layout = ({ children }: { children: JSX.Element }) => {
 		<div className="flex relative">
 			<Sidebar Collapse={Collapse} />
 			<div id="content" className="relative w-full">
-				<Navbar Collapse={() => setCollapse(!Collapse)} />
+				<Navbar onClick={() => setCollapse(!Collapse)} />
 				{children}
 				<footer className="absolute bottom-0 bg-red-400 w-full h-10">footer</footer>
 			</div>
