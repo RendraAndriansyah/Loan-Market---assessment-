@@ -1,13 +1,13 @@
 type ButtonProps = {
 	children: JSX.Element | string;
 	onClick?: () => void;
-	className?: string;
+	size?: string;
 };
 
 const Button = (props: ButtonProps) => {
-	const { children, onClick, className = "border-1 px-2 py-1 text-slate-200 rounded-sm" } = props;
+	const { children, onClick, size } = props;
 	return (
-		<button onClick={onClick} className={className}>
+		<button onClick={onClick} className={`bg-color-secondary text-slate-300 rounded-md font-semibold ${size}`}>
 			{children}
 		</button>
 	);

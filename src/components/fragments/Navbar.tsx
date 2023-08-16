@@ -5,7 +5,7 @@ const Navbar = ({ onClick }: { onClick: () => void }) => {
 	return (
 		<nav className="flex bg-white items-center justify-between w-full white h-12 px-3">
 			<div className="flex gap-3">
-				<Button onClick={onClick} className="bg-color-secondary px-2 py-1 rounded-sm text-slate-300">
+				<Button onClick={onClick} size="px-2 py-1">
 					<GiHamburgerMenu size={22} />
 				</Button>
 				<p className="text-lg font-semibold text-primary-100">
