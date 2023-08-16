@@ -8,47 +8,47 @@ import CardRow from "../components/fragments/CardRow";
 function HomePages() {
 	const dummyCardRow = [
 		{
-			icon: <BiUserCircle size={40} />,
+			icon: <BiUserCircle size={30} />,
 			title: "Admin Office",
 			value: 4,
 		},
 		{
-			icon: <BiUserCircle size={40} />,
+			icon: <BiUserCircle size={30} />,
 			title: "Principle",
 			value: 12,
 		},
 		{
-			icon: <BiUserCircle size={40} />,
+			icon: <BiUserCircle size={30} />,
 			title: "Author",
 			value: 6,
 		},
 		{
-			icon: <BiUserCircle size={40} />,
+			icon: <BiUserCircle size={30} />,
 			title: "Super Admin",
 			value: 3,
 		},
 		{
-			icon: <BiUserCircle size={40} />,
+			icon: <BiUserCircle size={30} />,
 			title: "Principle LMI",
 			value: 11,
 		},
 		{
-			icon: <BiUserCircle size={40} />,
+			icon: <BiUserCircle size={30} />,
 			title: "BDE",
 			value: 7,
 		},
 		{
-			icon: <BiUserCircle size={40} />,
+			icon: <BiUserCircle size={30} />,
 			title: "Bank Officer",
 			value: 124,
 		},
 		{
-			icon: <BiUserCircle size={40} />,
+			icon: <BiUserCircle size={30} />,
 			title: "Bank Admin",
 			value: 210,
 		},
 		{
-			icon: <BiUserCircle size={40} />,
+			icon: <BiUserCircle size={30} />,
 			title: "Bank Principal",
 			value: 36,
 		},
@@ -69,7 +69,7 @@ function HomePages() {
 					</div>
 
 					{/* Cards */}
-					<div className="grid grid-cols-2 mt-12 gap-x-24 ">
+					<div className="grid grid-cols-2 mt-6 gap-x-24 ">
 						<div className="grid grid-cols-3 gap-12">
 							<CardColumn icon={<BiUserCircle size={60} />} value={9823} title="Users" />
 							<CardColumn icon={<GiReceiveMoney size={60} />} value={243} title="Borrower" />
@@ -84,7 +84,7 @@ function HomePages() {
 				</section>
 
 				{/* Section 2 */}
-				<section>
+				<section className="mt-2">
 					{/* Header */}
 					<div className="flex justify-between">
 						<div>
@@ -94,17 +94,9 @@ function HomePages() {
 					</div>
 
 					{/* Cards */}
-					<div className="grid grid-cols-2 mt-12 gap-x-24 ">
-						<div className="grid grid-cols-3 gap-12">
-							<CardColumn icon={<BiUserCircle size={60} />} value={9823} title="Users" />
-							<CardColumn icon={<GiReceiveMoney size={60} />} value={243} title="Borrower" />
-							<CardColumn icon={<RiCustomerServiceLine size={60} />} value={56} title="Loan Adviser" />
-						</div>
-						<div className="grid grid-cols-3 gap-4">
-							{dummyCardRow.map((item, index) => (
-								<CardRow key={index} icon={item.icon} title={item.title} value={item.value} />
-							))}
-						</div>
+					<div className="grid grid-cols-2 mt-6 bg-white min-h-[25vh] ">
+						<div className="grid grid-cols-3 gap-12">test</div>
+						<div className="grid grid-cols-3 gap-4">test</div>
 					</div>
 				</section>
 			</>

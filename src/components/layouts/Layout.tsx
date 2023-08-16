@@ -10,7 +10,9 @@ const Layout = ({ children }: { children: JSX.Element }) => {
 			<div id="content" className="relative w-full">
 				<Navbar onClick={() => setCollapse(!Collapse)} />
 				<main className="p-8">{children}</main>
-				<footer className="absolute bottom-0 bg-red-400 w-full h-10">footer</footer>
+				<footer className="flex items-center absolute bottom-0 bg-white w-full h-12">
+					<p className="pl-10">Copyright Loan Market © 2021</p>
+				</footer>
 			</div>
 		</div>
 	);

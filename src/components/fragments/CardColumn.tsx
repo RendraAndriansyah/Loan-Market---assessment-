@@ -7,9 +7,9 @@ const CardColumn = ({ icon, value, title }: CardColumn) => {
 	return (
 		<div
 			id="card-column"
-			className="flex flex-col justify-center items-center gap-y-12 bg-white m-1 w-44 rounded-xl h-72 "
+			className="w-[11vw] h-[30vh] flex flex-col justify-center items-center gap-y-12 bg-white m-1  rounded-xl "
 		>
-			<div className="w-24 h-24 bg-color-secondary text-slate-200 rounded-2xl flex items-center justify-center">
+			<div className="w-20 h-20 bg-color-secondary text-slate-200 rounded-2xl flex items-center justify-center">
 				{icon}
 			</div>
 			<div className="text-center">
