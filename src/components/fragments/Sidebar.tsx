@@ -7,7 +7,9 @@ const Sidebar = ({ Collapse }: { Collapse: boolean }) => {
 
 	return (
 		<aside
-			className={`${Collapse ? "w-16" : "w-72"}  bg-cyan-950 transition-all  h-screen sticky top-0 text-white z-10`}
+			className={`${
+				Collapse ? "w-16" : "w-72"
+			}  bg-color-secondary transition-all  h-screen sticky top-0 text-white z-10`}
 		>
 			<BrandAvatar Collapse={Collapse} username="Yoseph Duna" statusUser="author" />
 			<menu className="pt-5">
@@ -29,13 +31,17 @@ const Sidebar = ({ Collapse }: { Collapse: boolean }) => {
 				</ul>
 			</menu>
 
-			<div id="notes" className="pt-20" hidden={Collapse}>
-				<Notes />
-				<Notes />
+			<div id="notes" className="pt-8" hidden={Collapse}>
+				<Notes
+					text={`Table data & analytic sementara pakai yang lama saja https://www.loanmarket.co.id/ admin/#/dashboard.*ha usnya be isi ada berapapostingan`}
+				/>
+				<Notes text={`Button "Go to CRM" hanyauntuk Superadmin`} />
 			</div>
 		</aside>
 	);
 };
+
+export default Sidebar;
 
 type BrandAvatarProps = {
 	username: string;
@@ -72,7 +78,7 @@ type ListMenuProps = {
 const ListMenu = ({ title, icon, children, Collapse, onHover }: ListMenuProps) => {
 	return (
 		<li
-			className="flex items-center h-10 bg-sky-950 border-l-emerald-50 border-l-2 px-5 py-2 cursor-pointer  transition-all "
+			className="flex items-center h-10 bg-active border-l-emerald-50 border-l-2 px-5 py-2 cursor-pointer  transition-all "
 			onMouseEnter={onHover}
 			onMouseLeave={onHover}
 		>
@@ -85,13 +91,11 @@ const ListMenu = ({ title, icon, children, Collapse, onHover }: ListMenuProps) =
 	);
 };
 
-const Notes = () => {
+const Notes = ({ text }: { text: string }) => {
 	return (
 		<div className="bg-yellow-100 text-slate-700 p-3 mx-5 my-4">
 			<h1 className="font-semibold text-slate-700">Notes :</h1>
-			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus, ratione? Lorem, ipsum Lorem ipsum dolor
+			<p className="text-sm">{text}</p>
 		</div>
 	);
 };
-
-export default Sidebar;

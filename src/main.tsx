@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
 import "./index.css";
+import Home from "./pages/HomePages";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(<App />);
+ReactDOM.createRoot(document.getElementById("root")!).render(<Home />);
