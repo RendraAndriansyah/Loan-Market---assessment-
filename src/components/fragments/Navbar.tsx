@@ -14,8 +14,13 @@ const Navbar = ({ onClick }: { onClick: () => void }) => {
 			</div>
 
 			<div id="auth-user" className="flex gap-2 items-center cursor-pointer">
-				<CgLogOff size={28} />
-				<p className="text-sm lg:text-lg font-medium text-color-secondary">Log out</p>
+				<div className="hidden sm:inline-block">
+					<CgLogOff size={28} />
+				</div>
+				<p className="hidden sm:inline-block text-sm lg:text-lg font-medium text-color-secondary">Log out</p>
+				<Button onClick={onClick} size="px-2 py-1 inline sm:hidden">
+					<GiHamburgerMenu size={22} />
+				</Button>
 			</div>
 		</nav>
 	);

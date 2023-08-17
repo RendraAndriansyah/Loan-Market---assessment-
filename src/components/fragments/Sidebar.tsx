@@ -2,44 +2,87 @@ import { GoChevronDown, GoHome, GoPencil } from "react-icons/go";
 import { AiOutlineUser } from "react-icons/ai";
 import Button from "../elements/Button";
 import { useState } from "react";
+import { CgLogOff } from "react-icons/cg";
 const Sidebar = ({ Collapse }: { Collapse: boolean }) => {
 	const [show, setShow] = useState<boolean>(true);
 
 	return (
-		<aside
-			className={`${
-				Collapse ? "w-16" : "w-72"
-			}  bg-color-secondary transition-all  h-screen sticky top-0 text-white z-10 hidden sm:inline-block`}
-		>
-			<BrandAvatar Collapse={Collapse} username="Yoseph Duna" statusUser="author" />
-			<menu className="pt-5">
-				<ul>
-					<ListMenu Collapse={Collapse} icon={<GoHome size={22} />} title="Dashboard" />
-					<ListMenu Collapse={Collapse} icon={<AiOutlineUser size={22} />} title="User Management" />
-					<ListMenu Collapse={Collapse} icon={<GoPencil size={22} />} title="News" onHover={() => setShow(!show)}>
-						<>
-							{!Collapse && (
-								<Button>
-									<GoChevronDown size={22} />
-								</Button>
-							)}
-							{Collapse && (
-								<div className="absolute left-16 text-left bg-sky-950 w-28 px-2 py-1.5" hidden={show}>
-									Add News
-								</div>
-							)}
-						</>
-					</ListMenu>
-				</ul>
-			</menu>
+		<>
+			<aside
+				className={`${
+					Collapse ? "w-16" : "w-72"
+				}  bg-color-secondary transition-all  h-screen sticky top-0 text-white z-10 hidden sm:inline-block`}
+			>
+				<BrandAvatar Collapse={Collapse} username="Yoseph Duna" statusUser="author" />
+				<menu className="pt-5">
+					<ul>
+						<ListMenu Collapse={Collapse} icon={<GoHome size={22} />} title="Dashboard" />
+						<ListMenu Collapse={Collapse} icon={<AiOutlineUser size={22} />} title="User Management" />
+						<ListMenu Collapse={Collapse} icon={<GoPencil size={22} />} title="News" onHover={() => setShow(!show)}>
+							<>
+								{!Collapse && (
+									<Button>
+										<GoChevronDown size={22} />
+									</Button>
+								)}
+								{Collapse && (
+									<div className="absolute left-16 text-left bg-sky-950 w-28 px-2 py-1.5" hidden={show}>
+										Add News
+									</div>
+								)}
+							</>
+						</ListMenu>
+					</ul>
+				</menu>
 
-			<div id="notes" className="pt-8" hidden={Collapse}>
-				<Notes
-					text={`Table data & analytic sementara pakai yang lama saja https://www.loanmarket.co.id/ admin/#/dashboard.*ha usnya be isi ada berapapostingan`}
-				/>
-				<Notes text={`Button "Go to CRM" hanyauntuk Superadmin`} />
-			</div>
-		</aside>
+				<div id="notes" className="pt-8" hidden={Collapse}>
+					<Notes
+						text={`Table data & analytic sementara pakai yang lama saja https://www.loanmarket.co.id/ admin/#/dashboard.*ha usnya be isi ada berapapostingan`}
+					/>
+					<Notes text={`Button "Go to CRM" hanyauntuk Superadmin`} />
+				</div>
+			</aside>
+
+			{/* MOBILE VERSION */}
+			<aside
+				className={`${
+					Collapse ? "-left-[800px]" : "left-0"
+				} w-64 bg-color-secondary fixed transition-all h-screen text-white z-10 inline-block sm:hidden`}
+			>
+				<BrandAvatar Collapse={Collapse} username="Yoseph Duna" statusUser="author" />
+				<menu className="pt-5">
+					<ul>
+						<ListMenu Collapse={Collapse} icon={<GoHome size={22} />} title="Dashboard" />
+						<ListMenu Collapse={Collapse} icon={<AiOutlineUser size={22} />} title="User Management" />
+						<ListMenu Collapse={Collapse} icon={<GoPencil size={22} />} title="News" onHover={() => setShow(!show)}>
+							<>
+								{!Collapse && (
+									<Button>
+										<GoChevronDown size={22} />
+									</Button>
+								)}
+								{Collapse && (
+									<div className="absolute left-16 text-left bg-sky-950 w-28 px-2 py-1.5" hidden={show}>
+										Add News
+									</div>
+								)}
+							</>
+						</ListMenu>
+					</ul>
+				</menu>
+
+				<div id="notes" className="pt-8" hidden={Collapse}>
+					<Notes
+						text={`Table data & analytic sementara pakai yang lama saja https://www.loanmarket.co.id/ admin/#/dashboard.*ha usnya be isi ada berapapostingan`}
+					/>
+					<Notes text={`Button "Go to CRM" hanyauntuk Superadmin`} />
+				</div>
+				<div className="absolute bottom-8 left-4 flex items-center gap-1 text-slate-100">
+					<CgLogOff size={28} />
+					<p className=" text-sm lg:text-lg font-medium ">Log out</p>
+				</div>
+			</aside>
+		</>
 	);
 };
 
@@ -97,7 +140,7 @@ const Notes = ({ text }: { text: string }) => {
 	return (
 		<div className="bg-yellow-100 text-slate-700 p-3 mx-5 my-4">
 			<h1 className="font-semibold text-slate-700">Notes :</h1>
-			<p className="text-sm">{text}</p>
+			<p className="sm:text-sm text-xs">{text}</p>
 		</div>
 	);
 };
