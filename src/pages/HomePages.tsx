@@ -1,12 +1,23 @@
 import { BiUserCircle } from "react-icons/bi";
 import { GiReceiveMoney } from "react-icons/gi";
+import { RiCustomerServiceLine } from "react-icons/ri";
 import Button from "../components/elements/Button";
 import CardColumn from "../components/fragments/CardColumn";
-import Layout from "../components/layouts/Layout";
-import { RiCustomerServiceLine } from "react-icons/ri";
 import CardRow from "../components/fragments/CardRow";
 import LineChart from "../components/fragments/charts/LineChart";
-import { unprocessed, processed, costumers } from "../dummy-data/DummyData";
+import SingleBarChart from "../components/fragments/charts/SingleBar";
+import Layout from "../components/layouts/Layout";
+import {
+	costumerFemale,
+	costumerMale,
+	costumers,
+	processed,
+	processedSingleBar,
+	unprocessed,
+	unprocessedSingleBar,
+} from "../dummy-data/DummyData";
+import { AiOutlineCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
+import { SlUserFemale, SlUser } from "react-icons/sl";
 function HomePages() {
 	const dummyCardRow = [
 		{
@@ -103,8 +114,11 @@ function HomePages() {
 								<LineChart data={processed} />
 								{/* <LineChart /> */}
 							</div>
-							<div className="row-span-6 bg-orange-500">
-								<div className="w-full ">asd</div>
+							<div className="row-span-6 ">
+								<div className="flex flex-col items-center gap-2 ">
+									<SingleBarChart icon={<AiOutlineCheckCircle size={30} />} data={unprocessedSingleBar} />
+									<SingleBarChart icon={<AiOutlineCloseCircle size={30} />} data={processedSingleBar} />
+								</div>
 							</div>
 						</div>
 
@@ -112,8 +126,11 @@ function HomePages() {
 							<div className="grid grid-cols-2 gap-2 border-b-2 border-gray-400/20 shadow-sm">
 								<LineChart data={costumers} />
 							</div>
-							<div className="row-span-6 bg-orange-500">
-								<div className="w-full ">asd</div>
+							<div className="row-span-6 ">
+								<div className="flex flex-col items-center gap-2">
+									<SingleBarChart icon={<SlUser size={25} />} data={costumerMale} />
+									<SingleBarChart icon={<SlUserFemale size={25} />} data={costumerFemale} />
+								</div>
 							</div>
 						</div>
 					</div>
