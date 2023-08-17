@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navbar from "../fragments/Navbar";
 import Sidebar from "../fragments/Sidebar";
+import Footer from "../fragments/Footer";
 
 const Layout = ({ children }: { children: JSX.Element[] }) => {
 	const [Collapse, setCollapse] = useState<boolean>(false);
@@ -9,10 +10,8 @@ const Layout = ({ children }: { children: JSX.Element[] }) => {
 			<Sidebar Collapse={Collapse} />
 			<div id="content" className="relative w-full">
 				<Navbar onClick={() => setCollapse(!Collapse)} />
-				<main className="px-6">{children}</main>
-				<footer className="flex items-center absolute bottom-0 bg-white w-full h-12">
-					<p className="pl-10">Copyright Loan Market © 2021</p>
-				</footer>
+				<main className="px-6 pb-12">{children}</main>
+				<Footer />
 			</div>
 		</div>
 	);

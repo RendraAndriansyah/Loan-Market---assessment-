@@ -183,3 +183,15 @@ export const costumerFemale = {
 		},
 	],
 };
+
+const dummyData = {
+	unprocessed,
+	processed,
+	costumers,
+	unprocessedSingleBar,
+	processedSingleBar,
+	costumerMale,
+	costumerFemale,
+};
+
+export default dummyData;
