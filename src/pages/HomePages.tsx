@@ -65,15 +65,15 @@ function HomePages() {
 			{/* Section 1 */}
 			<Section>
 				<Section.Header title="Dashboard" desc="User Quantity">
-					<Button size="w-36 h-12" children={"Go to CRM ➜"} />
+					<Button size="w-28 h-9 md:w-36 md:h-12 text-md" children={"Go to CRM ➜"} />
 				</Section.Header>
 
 				{/* Content */}
 				<div className="grid 2xl:grid-cols-2 mt-6 gap-6 ">
-					<div className="grid grid-cols-3 gap-x-16 justify-items-center">
-						<CardColumn icon={<BiUserCircle size={50} />} value={9823} title="Users" />
-						<CardColumn icon={<GiReceiveMoney size={50} />} value={243} title="Borrower" />
-						<CardColumn icon={<RiCustomerServiceLine size={50} />} value={56} title="Loan Adviser" />
+					<div className="grid grid-cols-3 md:gap-x-16 justify-items-center">
+						<CardColumn icon={<BiUserCircle size={"75%"} />} value={9823} title="Users" />
+						<CardColumn icon={<GiReceiveMoney size={"75%"} />} value={243} title="Borrower" />
+						<CardColumn icon={<RiCustomerServiceLine size={"75%"} />} value={56} title="Loan Adviser" />
 					</div>
 					<div className="grid grid-cols-3 gap-4 justify-items-center">
 						{dummyCardRow.map((item, index) => (

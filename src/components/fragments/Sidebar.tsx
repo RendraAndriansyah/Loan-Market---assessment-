@@ -9,7 +9,7 @@ const Sidebar = ({ Collapse }: { Collapse: boolean }) => {
 		<aside
 			className={`${
 				Collapse ? "w-16" : "w-72"
-			}  bg-color-secondary transition-all  h-screen sticky top-0 text-white z-10`}
+			}  bg-color-secondary transition-all  h-screen sticky top-0 text-white z-10 hidden sm:inline-block`}
 		>
 			<BrandAvatar Collapse={Collapse} username="Yoseph Duna" statusUser="author" />
 			<menu className="pt-5">
