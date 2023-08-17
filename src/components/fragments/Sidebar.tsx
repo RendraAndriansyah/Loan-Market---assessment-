@@ -17,16 +17,18 @@ const Sidebar = ({ Collapse }: { Collapse: boolean }) => {
 					<ListMenu Collapse={Collapse} icon={<GoHome size={22} />} title="Dashboard" />
 					<ListMenu Collapse={Collapse} icon={<AiOutlineUser size={22} />} title="User Management" />
 					<ListMenu Collapse={Collapse} icon={<GoPencil size={22} />} title="News" onHover={() => setShow(!show)}>
-						{!Collapse && (
-							<Button>
-								<GoChevronDown size={22} />
-							</Button>
-						)}
-						{Collapse && (
-							<div className="absolute left-16 text-left bg-sky-950 w-28 px-2 py-1.5" hidden={show}>
-								Add News
-							</div>
-						)}
+						<>
+							{!Collapse && (
+								<Button>
+									<GoChevronDown size={22} />
+								</Button>
+							)}
+							{Collapse && (
+								<div className="absolute left-16 text-left bg-sky-950 w-28 px-2 py-1.5" hidden={show}>
+									Add News
+								</div>
+							)}
+						</>
 					</ListMenu>
 				</ul>
 			</menu>
@@ -70,7 +72,7 @@ const BrandAvatar = ({ username, statusUser, Collapse }: BrandAvatarProps) => {
 type ListMenuProps = {
 	title: string;
 	icon: JSX.Element;
-	children?: any;
+	children?: JSX.Element;
 	Collapse: boolean;
 	onHover?: () => void;
 };

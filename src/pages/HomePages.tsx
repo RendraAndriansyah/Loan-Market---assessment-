@@ -1,16 +1,16 @@
+import { AiOutlineCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
 import { BiUserCircle } from "react-icons/bi";
 import { GiReceiveMoney } from "react-icons/gi";
 import { RiCustomerServiceLine } from "react-icons/ri";
+import { SlUser, SlUserFemale } from "react-icons/sl";
 import Button from "../components/elements/Button";
 import CardColumn from "../components/fragments/CardColumn";
 import CardRow from "../components/fragments/CardRow";
 import LineChart from "../components/fragments/charts/LineChart";
 import SingleBarChart from "../components/fragments/charts/SingleBar";
 import Layout from "../components/layouts/Layout";
-import dummyData from "../dummy-data/DummyData";
-import { AiOutlineCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
-import { SlUserFemale, SlUser } from "react-icons/sl";
 import Section from "../components/layouts/Section";
+import dummyData from "../dummy-data/DummyData";
 function HomePages() {
 	const dummyCardRow = [
 		{
