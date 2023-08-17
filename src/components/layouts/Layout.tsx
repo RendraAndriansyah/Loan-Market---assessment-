@@ -24,7 +24,7 @@ const Layout = ({ children }: { children: JSX.Element[] }) => {
 			<Sidebar Collapse={collapse} />
 			<div id="content" className="relative w-full">
 				<Navbar onClick={() => setCollapse(!collapse)} />
-				<main className="px-2 md:px-6 pb-8">{children}</main>
+				<main className="px-4 md:px-6 pb-8">{children}</main>
 				<Footer />
 			</div>
 		</div>
