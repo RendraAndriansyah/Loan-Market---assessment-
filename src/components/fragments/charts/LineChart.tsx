@@ -21,11 +21,14 @@ type dataProps = {
 };
 
 const LineChart = ({ data }: dataProps) => {
-	const color = data.datasets[0]?.borderColor;
+	const color = data.datasets[0].borderColor;
 	return (
-		<div className={`flex  h-[5vh] my-2 items-center rounded-md border-l-4 gap-2 px-2`} style={{ borderColor: color }}>
+		<div
+			className={`flex w-max h-[5vh] my-2 items-center rounded-md border-l-4 gap-2 px-2`}
+			style={{ borderColor: color }}
+		>
 			<div className="p-2 w-[60%] ">
-				<p className="text-xs text-slate-400">{data.title}</p>
+				<p className="text-xs 2xl:text-sm text-slate-400">{data.title}</p>
 				<p className="text-xl font-medium">{Intl.NumberFormat("en-US").format(data.value)}</p>
 			</div>
 			<div className="w-[60%] ">

@@ -33,3 +33,21 @@ export const processed = {
 	title: "Sudah Diproses",
 	value: 22643,
 };
+
+export const costumers = {
+	labels: ["a", "b", "c", "d", "e", "f", "g"],
+	datasets: [
+		{
+			data: [1, 0.8, 1.1, 0.8, 1.5, 0.8, 1.2],
+			backgroundColor: "transparent",
+			borderColor: "#F9C014",
+			// pointBorderColor: "transparent",
+			pointRadius: 0,
+			borderWidth: 2,
+			fill: true,
+			tension: 0.4,
+		},
+	],
+	title: "Customer",
+	value: 78623,
+};
