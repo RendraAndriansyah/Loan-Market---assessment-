@@ -5,6 +5,8 @@ import CardColumn from "../components/fragments/CardColumn";
 import Layout from "../components/layouts/Layout";
 import { RiCustomerServiceLine } from "react-icons/ri";
 import CardRow from "../components/fragments/CardRow";
+import LineChart from "../components/fragments/charts/LineChart";
+import { unprocessed, processed } from "../dummy-data/DummyData";
 function HomePages() {
 	const dummyCardRow = [
 		{
@@ -95,8 +97,17 @@ function HomePages() {
 
 					{/* Cards */}
 					<div className="grid grid-cols-2 mt-6 bg-white min-h-[25vh] ">
-						<div className="grid grid-cols-3 gap-12">test</div>
-						<div className="grid grid-cols-3 gap-4">test</div>
+						<div className="grid gap-4 ">
+							<div className="grid grid-cols-2 gap-2 border-b-2 border-gray-400/40 shadow-sm">
+								<LineChart data={unprocessed} />
+								<LineChart data={processed} />
+								{/* <LineChart /> */}
+							</div>
+							<div className="row-span-6 bg-orange-500">
+								<div className="w-full ">asd</div>
+							</div>
+						</div>
+						<div className="grid grid-cols-3 gap-4 bg-teal-500">right</div>
 					</div>
 				</section>
 			</>
