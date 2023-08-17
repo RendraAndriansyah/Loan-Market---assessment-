@@ -21,7 +21,7 @@ interface DataPoint {
 
 const SingleBarChart = ({ data, icon }: { data: DataProps; icon: JSX.Element }) => {
 	return (
-		<div className="w-[90%]">
+		<div className="w-[99%] 2xl:w-[90%] ">
 			<div className="flex justify-between">
 				<div className="flex items-center gap-1 text-color-secondary">
 					{icon}
@@ -29,7 +29,7 @@ const SingleBarChart = ({ data, icon }: { data: DataProps; icon: JSX.Element }) 
 				</div>
 				<p className="font-semibold text-color-secondary">{data.datasets[0].data[0].x}%</p>
 			</div>
-			<Bar data={data} options={optionSingleBar} height={5} width={100} />
+			<Bar data={data} options={optionSingleBar} height={3} width={100} />
 		</div>
 	);
 };

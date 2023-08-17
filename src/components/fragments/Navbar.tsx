@@ -3,9 +3,9 @@ import { CgLogOff } from "react-icons/cg";
 import Button from "../elements/Button";
 const Navbar = ({ onClick }: { onClick: () => void }) => {
 	return (
-		<nav className="flex bg-white items-center justify-between w-full white h-12 px-3">
-			<div className="flex gap-3">
-				<Button onClick={onClick} size="px-2 py-1">
+		<nav className="flex sticky top-0 bg-white items-center justify-between w-full white h-12 px-3">
+			<div className=" gap-3  flex ">
+				<Button onClick={onClick} size="px-2 py-1 hidden lg:inline">
 					<GiHamburgerMenu size={22} />
 				</Button>
 				<p className="text-lg font-semibold text-primary-100">

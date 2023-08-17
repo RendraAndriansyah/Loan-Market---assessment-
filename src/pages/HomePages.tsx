@@ -18,6 +18,7 @@ import {
 } from "../dummy-data/DummyData";
 import { AiOutlineCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
 import { SlUserFemale, SlUser } from "react-icons/sl";
+import Section from "../components/layouts/Section";
 function HomePages() {
 	const dummyCardRow = [
 		{
@@ -69,73 +70,59 @@ function HomePages() {
 
 	return (
 		<Layout>
-			<>
-				{/* Section 1 */}
-				<section>
-					{/* Header */}
-					<div className="flex justify-between">
-						<div>
-							<h1 className="text-2xl font-semibold text-primary-100">Dashboard</h1>
-							<p className="text-slate-400">User Quantity</p>
-						</div>
-						<Button size="w-36 h-12">Go to CRM ➜ </Button>
+			{/* Section 1 */}
+			<Section>
+				<Section.Header title="Dashboard" desc="User Quantity">
+					<Button size="w-36 h-12" children={"Go to CRM ➜"} />
+				</Section.Header>
+
+				{/* Content */}
+				<div className="grid 2xl:grid-cols-2 mt-6 gap-6 ">
+					<div className="grid grid-cols-3 gap-x-16 justify-items-center">
+						<CardColumn icon={<BiUserCircle size={60} />} value={9823} title="Users" />
+						<CardColumn icon={<GiReceiveMoney size={60} />} value={243} title="Borrower" />
+						<CardColumn icon={<RiCustomerServiceLine size={60} />} value={56} title="Loan Adviser" />
 					</div>
-
-					{/* Cards */}
-					<div className="grid 2xl:grid-cols-2 mt-6 gap-12 ">
-						<div className="grid grid-cols-3 gap-x-16 justify-items-center">
-							<CardColumn icon={<BiUserCircle size={60} />} value={9823} title="Users" />
-							<CardColumn icon={<GiReceiveMoney size={60} />} value={243} title="Borrower" />
-							<CardColumn icon={<RiCustomerServiceLine size={60} />} value={56} title="Loan Adviser" />
-						</div>
-						<div className="grid grid-cols-3 gap-4 justify-items-center">
-							{dummyCardRow.map((item, index) => (
-								<CardRow key={index} icon={item.icon} title={item.title} value={item.value} />
-							))}
-						</div>
+					<div className="grid grid-cols-3 gap-4 justify-items-center">
+						{dummyCardRow.map((item, index) => (
+							<CardRow key={index} icon={item.icon} title={item.title} value={item.value} />
+						))}
 					</div>
-				</section>
+				</div>
+			</Section>
 
-				{/* Section 2 */}
-				<section className="mt-2">
-					{/* Header */}
-					<div className="flex justify-between">
-						<div>
-							<h1 className="text-2xl font-semibold text-primary-100">Data & Analytics</h1>
-							<p className="text-slate-400">Show Update of Post</p>
+			{/* Section 2 */}
+			<Section>
+				<Section.Header title="Data Analytics" desc="Show update & post" />
+
+				{/* Content */}
+				<div className="grid px-8 2xl:grid-cols-2 mt-6 bg-white min-h-[25vh] rounded-xl p-4 gap-3 ">
+					<div className="grid gap-4 shadow-sm">
+						<div className="grid md:grid-cols-2 gap-2 border-b-2 border-gray-400/20 shadow-sm">
+							<LineChart data={unprocessed} />
+							<LineChart data={processed} />
 						</div>
-					</div>
-
-					{/* Cards */}
-					<div className="grid grid-cols-2 mt-6 bg-white min-h-[25vh] rounded-xl p-4 gap-3 ">
-						<div className="grid gap-4 ">
-							<div className="grid grid-cols-2 gap-2 border-b-2 border-gray-400/20 shadow-sm">
-								<LineChart data={unprocessed} />
-								<LineChart data={processed} />
-								{/* <LineChart /> */}
-							</div>
-							<div className="row-span-6 ">
-								<div className="flex flex-col items-center gap-2 ">
-									<SingleBarChart icon={<AiOutlineCheckCircle size={30} />} data={unprocessedSingleBar} />
-									<SingleBarChart icon={<AiOutlineCloseCircle size={30} />} data={processedSingleBar} />
-								</div>
-							</div>
-						</div>
-
-						<div className="grid gap-4 ">
-							<div className="grid grid-cols-2 gap-2 border-b-2 border-gray-400/20 shadow-sm">
-								<LineChart data={costumers} />
-							</div>
-							<div className="row-span-6 ">
-								<div className="flex flex-col items-center gap-2">
-									<SingleBarChart icon={<SlUser size={25} />} data={costumerMale} />
-									<SingleBarChart icon={<SlUserFemale size={25} />} data={costumerFemale} />
-								</div>
+						<div className="row-span-6 ">
+							<div className="flex flex-col 2xl:items-center gap-2 ">
+								<SingleBarChart icon={<AiOutlineCheckCircle size={30} />} data={unprocessedSingleBar} />
+								<SingleBarChart icon={<AiOutlineCloseCircle size={30} />} data={processedSingleBar} />
 							</div>
 						</div>
 					</div>
-				</section>
-			</>
+					<div className="grid gap-4 shadow-sm">
+						<div className="grid md:grid-cols-2 gap-2 border-b-2 border-gray-400/20 shadow-sm">
+							<LineChart data={costumers} />
+							<LineChart data={costumers} />
+						</div>
+						<div className="row-span-6 ">
+							<div className="flex flex-col 2xl:items-center gap-2">
+								<SingleBarChart icon={<SlUser size={25} />} data={costumerMale} />
+								<SingleBarChart icon={<SlUserFemale size={25} />} data={costumerFemale} />
+							</div>
+						</div>
+					</div>
+				</div>
+			</Section>
 		</Layout>
 	);
 }
