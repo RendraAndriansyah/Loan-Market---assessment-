@@ -75,7 +75,7 @@ function HomePages() {
 						<CardColumn icon={<GiReceiveMoney size={"75%"} />} value={243} title="Borrower" />
 						<CardColumn icon={<RiCustomerServiceLine size={"75%"} />} value={56} title="Loan Adviser" />
 					</div>
-					<div className="grid grid-cols-3 gap-4 justify-items-center">
+					<div className="grid grid-cols-3 gap-4  justify-items-center">
 						{dummyCardRow.map((item, index) => (
 							<CardRow key={index} icon={item.icon} title={item.title} value={item.value} />
 						))}
