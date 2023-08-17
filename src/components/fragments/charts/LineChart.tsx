@@ -3,7 +3,24 @@ import { Line } from "react-chartjs-2";
 import { optionsLine } from "../../../dummy-data/DummyOption";
 ChartJS.register(LineElement, CategoryScale, LinearScale, Filler, PointElement);
 
-const LineChart = ({ data }: { data: any }) => {
+type dataProps = {
+	data: {
+		labels: string[];
+		datasets: {
+			data: number[];
+			backgroundColor: string;
+			borderColor: string;
+			pointRadius: number;
+			borderWidth: number;
+			fill: boolean;
+			tension: number;
+		}[];
+		title: string;
+		value: number;
+	};
+};
+
+const LineChart = ({ data }: dataProps) => {
 	const color = data.datasets[0]?.borderColor;
 	return (
 		<div className={`flex  h-[5vh] my-2 items-center rounded-md border-l-4 gap-2 px-2`} style={{ borderColor: color }}>
