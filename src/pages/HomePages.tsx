@@ -82,8 +82,8 @@ function HomePages() {
 					</div>
 
 					{/* Cards */}
-					<div className="grid grid-cols-2 mt-6 gap-x-24 ">
-						<div className="grid grid-cols-3 gap-12">
+					<div className="grid 2xl:grid-cols-2 mt-6 gap-12 ">
+						<div className="grid grid-cols-3 gap-x-16 bg-red-200 justify-items-center">
 							<CardColumn icon={<BiUserCircle size={60} />} value={9823} title="Users" />
 							<CardColumn icon={<GiReceiveMoney size={60} />} value={243} title="Borrower" />
 							<CardColumn icon={<RiCustomerServiceLine size={60} />} value={56} title="Loan Adviser" />
