@@ -83,12 +83,12 @@ function HomePages() {
 
 					{/* Cards */}
 					<div className="grid 2xl:grid-cols-2 mt-6 gap-12 ">
-						<div className="grid grid-cols-3 gap-x-16 bg-red-200 justify-items-center">
+						<div className="grid grid-cols-3 gap-x-16 justify-items-center">
 							<CardColumn icon={<BiUserCircle size={60} />} value={9823} title="Users" />
 							<CardColumn icon={<GiReceiveMoney size={60} />} value={243} title="Borrower" />
 							<CardColumn icon={<RiCustomerServiceLine size={60} />} value={56} title="Loan Adviser" />
 						</div>
-						<div className="grid grid-cols-3 gap-4">
+						<div className="grid grid-cols-3 gap-4 justify-items-center">
 							{dummyCardRow.map((item, index) => (
 								<CardRow key={index} icon={item.icon} title={item.title} value={item.value} />
 							))}

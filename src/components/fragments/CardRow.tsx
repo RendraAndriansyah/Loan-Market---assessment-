@@ -6,7 +6,7 @@ type CardRowProps = {
 
 const CardRow = ({ icon, title, value }: CardRowProps) => {
 	return (
-		<div className="flex px-2 bg-white rounded-xl justify-between items-center">
+		<div className="flex w-[18vw] h-[6vh] 2xl:w-[12vw] px-2 bg-white rounded-xl justify-between items-center">
 			<div className="bg-zinc-700/90 text-white p-2 rounded-xl">{icon}</div>
 			<div className="text-slate-700">
 				<h1 className="text-xs 2xl:text-sm ">{title}</h1>
